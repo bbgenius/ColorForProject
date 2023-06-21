@@ -1,0 +1,130 @@
+@import './helper/variable';
+@import './helper/reset';
+
+body {
+  padding: 1.5rem;
+}
+.title_main {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  color: $--color-blue-400;
+  letter-spacing: 2px;
+}
+.form_container {
+  width: 70vw;
+  max-width: 50rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .label_color {
+    color: $--color-blue-300;
+    font-weight: 500;
+    font-size: 1.6rem;
+    margin-right: 0.4rem;
+  }
+  .input_color {
+    outline: 0;
+    border: 0;
+    margin-right: 0.5rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: block;
+    cursor: pointer;
+  }
+  .input_text {
+    margin-right: 1rem;
+    height: 3rem;
+    border: 3px solid $--color-blue-200;
+    padding: 0.8rem;
+    font-size: 1.8rem;
+    color: $--color-blue-400;
+    &:focus {
+      outline: 0;
+      border: 3px solid $--color-green-400;
+      color: $--color-purple-100;
+    }
+  }
+  .btn {
+    padding: 0.4rem 0.8rem;
+    color: #fff;
+    font-weight: 600;
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+  }
+}
+
+.colors_container {
+  width: 80vw;
+  max-width: 1200px;
+  margin: 5rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 2rem;
+  row-gap: 2rem;
+  justify-content: center;
+  .color_item {
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 2rem;
+    box-shadow: 3px 5px 5px 4px $--color-grey-100;
+    cursor: pointer;
+    .weight,
+    .hex {
+      font-weight: 400;
+      font-size: 2rem;
+    }
+    &:active {
+      box-shadow: 3px 5px 4px 2px $--color-grey-100;
+    }
+  }
+}
+
+@media screen and (max-width: 921px) {
+  .colors_container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .title_main {
+    font-size: 2rem;
+  }
+  .form_container {
+    flex-direction: column;
+    .btn {
+      margin-top: 1rem;
+    }
+    .input_text {
+      width: 10rem;
+      border: 1px solid $--color-blue-200;
+      &:focus {
+        border: 1px solid $--color-green-300;
+      }
+    }
+  }
+  .colors_container {
+    grid-template-columns: repeat(2, 1fr);
+    .color_item {
+      width: 15rem;
+      height: 15rem;
+    }
+  }
+}
+.Toastify__toast--error {
+  background: #fca7a9 !important;
+  font-size: 1.5rem !important;
+}
+.Toastify__toast--success {
+  background: $--color-green-100 !important;
+  font-size: 2rem !important;
+  color: $--color-blue-400 !important;
+}
